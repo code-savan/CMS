@@ -10,10 +10,11 @@ import ContractDetails from './pages/ContractDetails';
 import PrivateRoute from './components/PrivateRoute';
 import Layout from './components/Layout';
 import EditContract from './pages/EditContract';
+
 function App() {
   return (
     <AuthProvider>
-      <Router>
+      <Router future={{ v7_relativeSplatPath: true }}>
         <div className="min-h-screen bg-gray-50">
           <Routes>
             <Route path="/login" element={<Login />} />
@@ -40,7 +41,6 @@ function App() {
                 element={
                   <PrivateRoute>
                     <ContractDetails />
-
                   </PrivateRoute>
                 }
               />

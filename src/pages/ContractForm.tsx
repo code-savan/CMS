@@ -19,7 +19,7 @@ export default function ContractForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const token = sessionStorage.getItem('accessToken');
+    const token = localStorage.getItem('accessToken');
     if (!token) {
       setError('Please log in to create a contract');
       navigate('/login');
